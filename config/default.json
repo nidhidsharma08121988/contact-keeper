@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://nidhi:nidhi@contacts.e7tvf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    "jwtSecret": "secret"
+  "mongoURI": "mongodb+srv://nidhi:nidhi@sayit.jntco.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
 }
