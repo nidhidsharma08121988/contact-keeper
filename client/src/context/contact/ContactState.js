@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import { v4 } from 'uuid'; //to generate random id to play with hardcoded data before using actual db
 import ContactContext from './contactContext';
 import contactReducer from './contactReducer';
+import axios from 'axios';
 import {
   ADD_CONTACT,
   DELETE_CONTACT,
@@ -14,34 +15,12 @@ import {
 
 const ContactState = props => {
   const initialState = {
-    contacts: [
-      {
-        id: 1,
-        name: 'Nidhi',
-        email: 'nidhi@gmail.com',
-        phone: '123-123-123',
-        type: 'personal',
-      },
-      {
-        id: 2,
-        name: 'Priyanka',
-        email: 'priyanka@gmail.com',
-        phone: '234-234-234',
-        type: 'personal',
-      },
-      {
-        id: 3,
-        name: 'Priyam',
-        email: 'priyam@gmail.com',
-        phone: '345-345-345',
-        type: 'professional',
-      },
-    ],
+    contacts: [],
     current: null,
     filtered: null,
   };
   const [state, dispatch] = useReducer(contactReducer, initialState);
-  //actions go here
+
   //add contact
   const addContact = contact => {
     contact.id = v4();

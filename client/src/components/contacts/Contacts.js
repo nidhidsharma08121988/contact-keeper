@@ -10,6 +10,7 @@ const Contacts = () => {
   return (
     <>
       <TransitionGroup>
+        {/* if current is null means no contact is being updated then display contacts normally */}
         {current === null
           ? filtered !== null
             ? filtered.map(contact => (
@@ -22,7 +23,8 @@ const Contacts = () => {
                   <ContactItem contact={contact} />
                 </CSSTransition>
               ))
-          : contacts.map(
+          : // else display only those contacts which are not being updated
+            contacts.map(
               contact =>
                 contact.id !== current.id && (
                   <CSSTransition
